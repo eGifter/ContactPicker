@@ -3,7 +3,7 @@
  */
 var ContactPicker = function() {};
 
-function contactPickedCallback(contactInfo) {
+function parseContact(contactInfo) {
     var newContantInfo = {
         id: contactInfo.id,
         displayName: contactInfo.displayName,
@@ -24,16 +24,17 @@ function contactPickedCallback(contactInfo) {
 	}
 	else{
         newContantInfo.address.push("")
-    }
-    success(newContantInfo);
+	}
+	
+    return newContantInfo;
 }
 
 ContactPicker.prototype.chooseEmailContact = function(success, failure) {
-    cordova.exec(contactPickedCallback, failure, "ContactPicker", "chooseEmailContact", []);
+    cordova.exec(contact => success(parseContact(contact)), failure, "ContactPicker", "chooseEmailContact", []);
 };
 
 ContactPicker.prototype.choosePhoneContact = function(success, failure) {
-    cordova.exec(contactPickedCallback, failure, "ContactPicker", "choosePhoneContact", []);
+    cordova.exec(contact => success(parseContact(contact)), failure, "ContactPicker", "choosePhoneContact", []);
 };
 
 ContactPicker.prototype.addContact = function(contact, success, failure) {
