@@ -39,7 +39,19 @@ public class ContactPickerPlugin extends CordovaPlugin {
                            CallbackContext callbackContext) {
         this.callbackContext = callbackContext;
         this.context = cordova.getActivity().getApplicationContext();
-        if (action.equals("chooseContact")) {
+        
+        if (action.equals("chooseEmailContact")) {
+            Intent intent = new Intent(Intent.ACTION_PICK,
+                    ContactsContract.CommonDataKinds.Email.CONTENT_URI);
+
+            cordova.startActivityForResult(this, intent, CHOOSE_CONTACT);
+
+            PluginResult r = new PluginResult(PluginResult.Status.NO_RESULT);
+            r.setKeepCallback(true);
+            callbackContext.sendPluginResult(r);
+            return true;
+        }
+        else if (action.equals("choosePhoneContact")) {
             Intent intent = new Intent(Intent.ACTION_PICK,
                     ContactsContract.CommonDataKinds.Phone.CONTENT_URI);
 
