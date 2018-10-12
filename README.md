@@ -57,7 +57,7 @@ cordova plugin add https://github.com/hazemhagrass/ContactPicker.git
 
 for Cordova >= 5.0.0
 ```js
-cordova plugin add com-badrit-contactpicker
+cordova plugin add cordova-plugin-contactpicker
 ```
 
 ## MIT Licence
