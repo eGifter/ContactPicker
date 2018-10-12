@@ -3,7 +3,7 @@
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="cordova-plugin-contactpicker"
-    version="2.0.0">
+    version="3.0.0">
     <author>Hazem Hagrass</author>
     <name>ContactPicker</name>
     <description>Cordova ContactPicker Plugin</description>

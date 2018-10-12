@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-contactpicker",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Cordova ContactPicker Plugin",
   "cordova": {
     "id": "cordova-plugin-contactpicker",
