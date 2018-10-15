@@ -1,6 +1,5 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
-#import <AddressBookUI/AddressBookUI.h>
 #import <ContactsUI/ContactsUI.h>
 #import <Cordova/CDVPlugin.h>
 

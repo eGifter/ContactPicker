@@ -75,16 +75,18 @@
 }
 
 - (void)requestAccessWithCallback:(void (^)(BOOL success))callback {
-    ABAddressBookRef addressBookRef = ABAddressBookCreateWithOptions(NULL, NULL);
-    
-    if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusNotDetermined) {
-        ABAddressBookRequestAccessWithCompletion(addressBookRef, ^(bool granted, CFErrorRef error) {
+
+    CNEntityType entityType = CNEntityTypeContacts;
+    if([CNContactStore authorizationStatusForEntityType:entityType] == CNAuthorizationStatusNotDetermined) {
+        CNContactStore * contactStore = [[CNContactStore alloc] init];
+        [contactStore requestAccessForEntityType:entityType completionHandler:^(BOOL granted, NSError * _Nullable error) {            
             if (callback) {
                 callback(granted);
             }
-        });
+        }];
     }
-    else if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusAuthorized) {
+    else if( [CNContactStore authorizationStatusForEntityType:entityType]== CNAuthorizationStatusAuthorized)
+    {
         if (callback) {
             callback(YES);
         }
