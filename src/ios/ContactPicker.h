@@ -1,14 +1,15 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import <AddressBookUI/AddressBookUI.h>
+#import <ContactsUI/ContactsUI.h>
 #import <Cordova/CDVPlugin.h>
 
-@interface ContactPicker : CDVPlugin <ABPersonViewControllerDelegate, ABPeoplePickerNavigationControllerDelegate, ABNewPersonViewControllerDelegate>
+@interface ContactPicker : CDVPlugin <CNContactPickerDelegate>
 
 @property(strong) NSString* callbackID;
 
-- (void) chooseContact:(CDVInvokedUrlCommand*)command;
+- (void) chooseEmailContact:(CDVInvokedUrlCommand*)command;
 
-- (void) addContact:(CDVInvokedUrlCommand*)command;
+- (void) choosePhoneContact:(CDVInvokedUrlCommand*)command;
 
 @end
