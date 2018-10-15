@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="cordova-plugin-contactpicker"
     version="3.0.1">
@@ -19,7 +19,7 @@
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="ContactPicker">
-                <param name="android-package" value="com.badrit.ContactPicker.ContactPickerPlugin"/>
+                <param name="android-package" value="com.egifter.ContactPicker.ContactPickerPlugin"/>
             </feature>
         </config-file>
         <config-file target="AndroidManifest.xml" parent="/*">
@@ -27,7 +27,7 @@
             <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
         </config-file>
 
-        <source-file src="src/android/ContactPickerPlugin.java" target-dir="src/com/badrit/ContactPicker/" />
+        <source-file src="src/android/ContactPickerPlugin.java" target-dir="src/com/egifter/ContactPicker/" />
 
     </platform>
 
