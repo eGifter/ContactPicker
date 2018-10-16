@@ -33,18 +33,14 @@
 
     <!-- ios -->
     <platform name="ios">
-       <config-file target="config.xml" parent="/*">
-           <feature name="ContactPicker">
-               <param name="ios-package" value="ContactPicker" />
-           </feature>
-       </config-file>
-       <config-file target="*-Info.plist" parent="CFBundleURLTypes">
-            <array>
-                <dict>
-                    <key>NSContactsUsageDescription</key>
-                    <string>This app requires contacts access to function properly.</string>
-                </dict>
-            </array>
+        <config-file target="config.xml" parent="/*">
+            <feature name="ContactPicker">
+                <param name="ios-package" value="ContactPicker" />
+            </feature>
+        </config-file>
+        <config-file target="*-Info.plist" parent="/*">
+            <key>NSContactsUsageDescription</key>
+            <string>This app requires contacts access to function properly.</string>
         </config-file>
 
        <header-file src="src/ios/ContactPicker.h" />
