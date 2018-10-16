@@ -38,8 +38,7 @@
                 <param name="ios-package" value="ContactPicker" />
             </feature>
         </config-file>
-        <config-file target="*-Info.plist" parent="/*">
-            <key>NSContactsUsageDescription</key>
+        <config-file target="*-Info.plist" parent="NSContactsUsageDescription">
             <string>This app requires contacts access to function properly.</string>
         </config-file>
 
