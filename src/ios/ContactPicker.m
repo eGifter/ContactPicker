@@ -28,7 +28,7 @@
     contactPicker.delegate = self;
     contactPicker.displayedPropertyKeys = @[CNContactEmailAddressesKey];
     
-    [self presentViewController:contactPicker animated:YES completion:nil];
+    [self.viewController presentViewController:contactPicker animated:YES completion:nil];
 }
 
 -(void)showSMSPicker {
@@ -37,7 +37,7 @@
     contactPicker.delegate = self;
     contactPicker.displayedPropertyKeys = @[CNContactPhoneNumbersKey];
     
-    [self presentViewController:contactPicker animated:YES completion:nil];
+    [self.viewController presentViewController:contactPicker animated:YES completion:nil];
 }
 
 -(void)contactPicker:(CNContactPickerViewController *)picker didSelectContactProperty:(CNContactProperty *)contactProperty {
